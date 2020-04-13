@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/camera_margin_side"
+    android:paddingTop="@dimen/camera_margin_top"
+    android:paddingRight="@dimen/camera_margin_side"
+    android:paddingBottom="@dimen/camera_margin_bottom"
+    tools:context=".ui.main.CameraFragment">
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="@dimen/image_back_alpha"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/camera_text_padding_bottom"
+        android:text="@string/camera_txt_msg"
+        android:textSize="@dimen/camera_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

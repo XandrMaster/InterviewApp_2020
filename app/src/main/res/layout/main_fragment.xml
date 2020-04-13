@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vmodel"
+            type="digital.equinox.interviewapp_2020.ui.main.viewmodels.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainFragment">
+
+        <Button
+            android:id="@+id/cameraBtn"
+            style="@style/ButtonStyle"
+            android:layout_marginTop="@dimen/main_margin_top"
+            android:onClick="@{vmodel::camera}"
+            android:text="@string/take_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/scroll_margin"
+            android:layout_marginBottom="@dimen/scroll_margin"
+            app:layout_constraintBottom_toTopOf="@id/logoutBtn"
+            app:layout_constraintTop_toBottomOf="@id/cameraBtn">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/photo_txt_margin"
+                android:paddingBottom="@dimen/photo_txt_margin">
+
+                <ImageView
+                    android:id="@+id/image_1"
+                    style="@style/PhotoImageStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/photo_1"
+                    style="@style/PhotoTextStyle"
+                    android:text="@string/photo_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_1" />
+
+                <ImageView
+                    android:id="@+id/image_2"
+                    style="@style/PhotoImageStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/photo_1" />
+
+                <TextView
+                    android:id="@+id/photo_2"
+                    style="@style/PhotoTextStyle"
+                    android:text="@string/photo_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_2" />
+
+                <ImageView
+                    android:id="@+id/image_3"
+                    style="@style/PhotoImageStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/photo_2" />
+
+                <TextView
+                    android:id="@+id/photo_3"
+                    style="@style/PhotoTextStyle"
+                    android:text="@string/photo_3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/logoutBtn"
+            style="@style/ButtonStyle"
+            android:layout_marginBottom="@dimen/main_margin_bottom"
+            android:onClick="@{vmodel::logOut}"
+            android:text="@string/logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
